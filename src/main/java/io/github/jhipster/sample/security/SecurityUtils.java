@@ -90,6 +90,10 @@ public final class SecurityUtils {
 
     @SuppressWarnings("unchecked")
     private static Collection<String> getRolesFromClaims(Map<String, Object> claims) {
+
+        System.out.println("getRolesFromClaims:");
+        System.out.println(claims);
+
         return (Collection<String>) claims.getOrDefault("groups",
             claims.getOrDefault("roles", new ArrayList<>()));
     }
